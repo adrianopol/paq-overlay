@@ -1,0 +1,36 @@
+--- CMakeLists.txt	2014-12-18 17:17:25.000000000 +0300
++++ CMakeLists.txt.new	2015-04-29 23:28:12.458359839 +0300
+@@ -27,6 +27,9 @@
+   SET(CMAKE_OSX_ARCHITECTURES x86_64)
+ ENDIF()
+ 
++# paths
++set(BINDIR bin CACHE PATH "where to install binaries")
++
+ # Define our options
+ OPTION(WITH_OPENGL "Activate OpenGL Renderer" OFF)
+ OPTION(WITH_DIRECTX "Activate DirectX Renderer" OFF)
+--- MapEdit/CMakeLists.txt	2014-12-18 17:17:25.000000000 +0300
++++ MapEdit/CMakeLists.txt.new	2015-04-29 23:28:58.027358628 +0300
+@@ -198,5 +198,5 @@
+     FIXUP_BUNDLE(${CMAKE_INSTALL_PREFIX}/MapEdit.app \"\" \"\")
+     ")
+ ELSE()
+-  install(TARGETS MapEdit RUNTIME DESTINATION CorsixTH)
++  install(TARGETS MapEdit RUNTIME DESTINATION ${BINDIR})
+ ENDIF()
+--- CorsixTH/CMakeLists.txt	2014-12-18 17:17:25.000000000 +0300
++++ CorsixTH/CMakeLists.txt.new	2015-04-29 23:29:59.629356991 +0300
+@@ -214,10 +214,10 @@
+     FIXUP_BUNDLE(${CMAKE_INSTALL_PREFIX}/CorsixTH.app \"\" \"\")
+     ")
+ ELSE()
+-  install(TARGETS CorsixTH RUNTIME DESTINATION CorsixTH)
++  install(TARGETS CorsixTH RUNTIME DESTINATION ${BINDIR})
+   install(DIRECTORY Lua Levels DESTINATION CorsixTH PATTERN "*.svn" EXCLUDE)
+   install(DIRECTORY Bitmap DESTINATION CorsixTH
+         FILES_MATCHING REGEX ".*\\.(tab|pal|dat|png)$"
+         PATTERN "*.svn" EXCLUDE)
+-  install(FILES CorsixTH.lua ../LICENSE.txt CorsixTH.ico DESTINATION CorsixTH )
++  install(FILES CorsixTH.lua CorsixTH.ico DESTINATION CorsixTH )
+ ENDIF()
