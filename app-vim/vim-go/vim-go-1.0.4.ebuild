@@ -8,7 +8,7 @@ inherit vim-plugin
 
 DESCRIPTION="vim plugin: Go development plugin for Vim"
 HOMEPAGE="https://github.com/fatih/vim-go"
-SRC_URI="https://github.com/fatih/${PN}/archive/v${PV}.zip -> vim-go-${PV}.zip"
+SRC_URI="https://github.com/fatih/${PN}/archive/v${PV}.zip -> ${P}.zip"
 LICENSE="BSD"
 KEYWORDS="amd64 ~x86"
 
