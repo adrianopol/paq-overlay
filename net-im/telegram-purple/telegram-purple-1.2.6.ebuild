@@ -2,6 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
+# based on
+# http://data.gpo.zugaina.org/jorgicio/net-im/telegram-purple/telegram-purple-1.2.0_beta3.ebuild
+
 EAPI=5
 
 DESCRIPTION="Libpurple (Pidgin) plugin for using a Telegram account"
