@@ -14,10 +14,9 @@ KEYWORDS="~x86 ~amd64"
 IUSE="+libwebp"
 
 DEPEND="net-im/pidgin
-		dev-libs/openssl
-		sys-libs/glibc
-		libwebp? ( media-libs/libwebp )
-		"
+        dev-libs/openssl
+        sys-libs/glibc
+        libwebp? ( media-libs/libwebp )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
