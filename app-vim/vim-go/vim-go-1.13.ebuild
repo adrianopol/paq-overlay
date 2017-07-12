@@ -13,3 +13,9 @@ LICENSE="BSD"
 KEYWORDS="amd64 ~x86"
 
 VIM_PLUGIN_HELPFILES="$PN"
+
+src_compile() {
+	# safely skip `make test` triggered by `make` as it runs `go get` commands
+	# TODO: see :GoInstallBinaries (https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt)
+	:
+}
