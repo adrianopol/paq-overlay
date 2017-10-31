@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,11 +13,6 @@ LICENSE="BSD"
 KEYWORDS="amd64 ~x86"
 
 VIM_PLUGIN_HELPFILES="$PN"
-
-src_prepare() {
-	# TODO: https://bugs.gentoo.org/635420
-	rm -rf .github/
-}
 
 src_compile() {
 	# safely skip `make test` triggered by `make` as it runs `go get` commands
