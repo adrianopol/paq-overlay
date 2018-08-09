@@ -8,9 +8,15 @@ inherit vim-plugin
 
 DESCRIPTION="vim plugin: Go development plugin for Vim"
 HOMEPAGE="https://github.com/fatih/vim-go"
-SRC_URI="https://github.com/fatih/${PN}/archive/v${PV}.zip -> ${P}.zip"
 LICENSE="BSD"
-KEYWORDS="amd64 ~x86"
+
+if [[ "$PV" == 9999 ]]; then
+	SRC_URI="https://github.com/fatih/${PN}/archive/master.zip -> ${P}.zip"
+	KEYWORDS=""
+else
+	SRC_URI="https://github.com/fatih/${PN}/archive/v${PV}.zip -> ${P}.zip"
+	KEYWORDS="~amd64 ~x86"
+fi
 
 VIM_PLUGIN_HELPFILES="$PN"
 
